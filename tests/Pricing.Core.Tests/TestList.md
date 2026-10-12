@@ -8,5 +8,6 @@
 
 ---
 
-- [ ] Fail if request is null
+- [x] Fail if request is null
+- [ ] Return true if succeeded
 - [ ] Invoke storage only once
