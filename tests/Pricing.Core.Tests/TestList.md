@@ -1,7 +1,7 @@
- - [ ] A pricing table has at least one tier
- - [ ] A pricing table has a set of tiers
- - [ ] A pricing table covers 24h
- - [ ] A pricing table has pricing per hour
- - [ ] Pricing tiers should be ordered by hour limit
- - [ ] The maximum price must be equal to the sum of tiers if not defined
- - [ ] The maximum price should be less than a full day through the pricing table
+- [x] A pricing table has at least one tier
+- [x] A pricing table has a set of tiers
+- [x] A pricing table covers 24h
+- [x] A pricing table has pricing per hour
+- [x] Pricing tiers should be ordered by hour limit
+- [x] The maximum price must be equal to the sum of tiers if not defined
+- [x] The maximum price should be less than a full day through the pricing table
