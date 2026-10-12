@@ -5,3 +5,8 @@
 - [x] Pricing tiers should be ordered by hour limit
 - [x] The maximum price must be equal to the sum of tiers if not defined
 - [x] The maximum price should be less than a full day through the pricing table
+
+---
+
+- [ ] Fail if request is null
+- [ ] Invoke storage only once

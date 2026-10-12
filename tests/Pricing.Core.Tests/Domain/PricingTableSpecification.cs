@@ -1,7 +1,7 @@
 using FluentAssertions;
 using Pricing.Core.Domain;
 
-namespace Pricing.Core.Tests;
+namespace Pricing.Core.Tests.Domain;
 
 public class PricingTableSpecification
 {
@@ -35,7 +35,7 @@ public class PricingTableSpecification
     public void PriceTiersShouldBeOrderedByHourLimit()
     {
         var pricingTable = new PricingTable([
-            CreatePriceTier(24),
+            CreatePriceTier(),
             CreatePriceTier(4)
         ]);
 
@@ -51,7 +51,7 @@ public class PricingTableSpecification
         var pricingTable = new PricingTable([
             CreatePriceTier(1, price1),
             CreatePriceTier(24, price2)
-        ], null);
+        ]);
 
         pricingTable.GetMaxDailyPrice().Should().Be(maxPrice);
     }
@@ -62,7 +62,7 @@ public class PricingTableSpecification
         const int maxDailyPrice = 15;
         var pricingTable = new PricingTable(
             [
-                CreatePriceTier(24, 1)
+                CreatePriceTier()
             ], maxDailyPrice
         );
 
@@ -84,7 +84,7 @@ public class PricingTableSpecification
     public void ShouldFailIfMaxDailyPriceIsGreaterThanTiersPrice()
     {
         var create = () => new PricingTable([
-            CreatePriceTier(24, 1)
+            CreatePriceTier()
         ], 26);
 
         create.Should().Throw<ArgumentException>();
