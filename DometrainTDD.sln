@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BB18CB37-F944-46F5-BB40-59850B73CF01}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9FD152DE-4AE3-4293-85D9-6A467AC940A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pricing.Core.Tests", "tests\Pricing.Core.Tests\Pricing.Core.Tests.csproj", "{801E94E6-F587-4EB9-92F9-BA71AAB614CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{801E94E6-F587-4EB9-92F9-BA71AAB614CB} = {9FD152DE-4AE3-4293-85D9-6A467AC940A0}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{801E94E6-F587-4EB9-92F9-BA71AAB614CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{801E94E6-F587-4EB9-92F9-BA71AAB614CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{801E94E6-F587-4EB9-92F9-BA71AAB614CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{801E94E6-F587-4EB9-92F9-BA71AAB614CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
