@@ -9,5 +9,7 @@
 ---
 
 - [x] Fail if request is null
-- [ ] Return true if succeeded
-- [ ] Invoke storage only once
+- [x] Return true if succeeded
+- [x] Invoke storage only once
+- [x] Request is mapped correctly to storage
+- [x] External dependency is invoked to store pricing and that it stored the input
