@@ -13,3 +13,11 @@
 - [x] Invoke storage only once
 - [x] Request is mapped correctly to storage
 - [x] External dependency is invoked to store pricing and that it stored the input
+
+---
+
+- [x] Throw exception if missing connection string
+- [x] Insert if not exists
+- [x] Replace if exists
+- [x] Replace keeps new value
+- [x] Return true if succeeded

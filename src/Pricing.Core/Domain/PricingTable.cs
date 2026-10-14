@@ -11,12 +11,11 @@ public class PricingTable
         _maxDailyPrice = maxDailyPrice;
         Tiers = tiers?.OrderBy(tier => tier.HourLimit).ToImmutableArray() ?? throw new ArgumentNullException();
 
-        if (!Tiers.Any())
+        if (Tiers.Count == 0)
             throw new ArgumentException("Missing Pricing Tiers", nameof(Tiers));
 
-        if (Tiers.Last().HourLimit < 24) throw new ArgumentException();
-
-        if (_maxDailyPrice.HasValue && _maxDailyPrice.Value > CalculateMaxDailyPriceFromTiers())
+        if (Tiers.Last().HourLimit < 24 ||
+            _maxDailyPrice.HasValue && _maxDailyPrice.Value > CalculateMaxDailyPriceFromTiers())
             throw new ArgumentException();
     }
 
