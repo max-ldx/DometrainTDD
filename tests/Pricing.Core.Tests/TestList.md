@@ -21,3 +21,9 @@
 - [x] Replace if exists
 - [x] Replace keeps new value
 - [x] Return true if succeeded
+
+---
+
+- [x] 500 if unknown error
+- [x] 200 if success
+- [x] 400 if fails

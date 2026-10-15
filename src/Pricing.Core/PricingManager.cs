@@ -2,21 +2,14 @@ using Pricing.Core.Extensions;
 
 namespace Pricing.Core;
 
-public class PricingManager
+public class PricingManager(IPricingStore pricingStore) : IPricingManager
 {
-    private readonly IPricingStore _pricingStore;
-
-    public PricingManager(IPricingStore pricingStore)
-    {
-        _pricingStore = pricingStore;
-    }
-
     public async Task<bool> HandleAsync(ApplyPricingRequest request, CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(request);
 
         var pricingTable = request.ToPricingTable();
         
-        return await _pricingStore.SaveAsync(pricingTable, cancellationToken);
+        return await pricingStore.SaveAsync(pricingTable, cancellationToken);
     }
 }
