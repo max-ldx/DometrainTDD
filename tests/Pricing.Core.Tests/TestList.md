@@ -27,3 +27,10 @@
 - [x] 500 if unknown error
 - [x] 200 if success
 - [x] 400 if fails
+
+---
+
+- [ ] Ticket for 30 minutes when 1h has the cost of 2
+- [x] Entry and Exit time
+- [x] Get Price Table from storage
+- [ ] Price service needs to return calculator result

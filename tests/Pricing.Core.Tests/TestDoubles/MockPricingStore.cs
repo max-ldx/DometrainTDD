@@ -1,4 +1,5 @@
 using FluentAssertions;
+using Pricing.Core.ApplyPricing;
 using Pricing.Core.Domain;
 
 namespace Pricing.Core.Tests.TestDoubles;

@@ -1,4 +1,4 @@
-namespace Pricing.Core;
+namespace Pricing.Core.ApplyPricing;
 
 public record ApplyPricingRequest(IReadOnlyCollection<PriceTierRequest> Tiers);
 

@@ -1,6 +1,6 @@
 using Pricing.Core.Extensions;
 
-namespace Pricing.Core;
+namespace Pricing.Core.ApplyPricing;
 
 public class PricingManager(IPricingStore pricingStore) : IPricingManager
 {

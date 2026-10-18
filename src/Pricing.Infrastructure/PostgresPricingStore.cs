@@ -1,6 +1,6 @@
 using System.Text.Json;
 using Dapper;
-using Pricing.Core;
+using Pricing.Core.ApplyPricing;
 using Pricing.Core.Domain;
 
 namespace Pricing.Infrastructure;

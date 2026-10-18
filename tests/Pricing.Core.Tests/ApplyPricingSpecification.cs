@@ -1,5 +1,6 @@
 using FluentAssertions;
 using NSubstitute;
+using Pricing.Core.ApplyPricing;
 using Pricing.Core.Domain;
 using Pricing.Core.Tests.TestDoubles;
 

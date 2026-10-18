@@ -1,7 +1,6 @@
 using System.Text.Json;
 using Dapper;
 using FluentAssertions;
-using Pricing.Core;
 using Pricing.Core.Domain;
 
 namespace Pricing.Infrastructure.Tests;

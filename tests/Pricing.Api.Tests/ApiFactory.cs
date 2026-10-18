@@ -3,7 +3,8 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Pricing.Core;
+using Pricing.Core.ApplyPricing;
+using Pricing.Core.TicketPrice;
 using Pricing.Infrastructure;
 
 namespace Pricing.Api.Tests;
@@ -14,13 +15,15 @@ public class ApiFactory(Action<IServiceCollection> configure) : WebApplicationFa
     {
         base.ConfigureWebHost(builder);
 
-        // builder.UseEnvironment("Development");
+        builder.UseEnvironment("Development");
 
         builder.ConfigureTestServices(services =>
         {
             services.RemoveAll<IDbConnectionFactory>();
             services.RemoveAll<DatabaseInitializer>();
             services.RemoveAll<IPricingStore>();
+            services.RemoveAll<IReadPricingStore>();
+            services.AddScoped<IReadPricingStore>(_ => null!);
 
             configure(services);
         });
