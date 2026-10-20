@@ -1,5 +1,7 @@
+using System.Runtime.InteropServices;
 using FluentAssertions;
 using NSubstitute;
+using NSubstitute.Core;
 using Pricing.Core.Domain;
 using Pricing.Core.TicketPrice;
 
@@ -50,8 +52,19 @@ public class TicketPriceServiceSpecification
         response.Price.Should().Be(2);
     }
 
-    private static TicketPriceRequest CreateTicketPriceRequest()
+    [Theory]
+    [InlineData(0)]
+    [InlineData(-90)]
+    public async Task ShouldThrowArgumentExceptionWhenEntryTimeIsEqualToOrGreaterThanExitTime(int durationInMinutes)
     {
-        return new TicketPriceRequest(DateTimeOffset.MinValue, DateTimeOffset.MaxValue);
+        var handle = () => _service.HandleAsync(CreateTicketPriceRequest(durationInMinutes), CancellationToken.None);
+
+        await handle.Should().ThrowExactlyAsync<ArgumentException>();
+    }
+
+    private static TicketPriceRequest CreateTicketPriceRequest(int durationInMinutes = 5)
+    {
+        var entry = DateTimeOffset.Now;
+        return new TicketPriceRequest(entry, entry.AddMinutes(durationInMinutes));
     }
 }
