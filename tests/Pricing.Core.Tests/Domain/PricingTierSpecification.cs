@@ -24,4 +24,14 @@ public class PricingTierSpecification
 
         create.Should().Throw<InvalidPricingTierException>();
     }
+
+    [Fact]
+    public void ShouldCalculateFullPriceForTier()
+    {
+        var tier = new PriceTier(5, 2m);
+
+        var fullPrice = tier.CalculateFullPrice();
+
+        fullPrice.Should().Be(10);
+    }
 }
