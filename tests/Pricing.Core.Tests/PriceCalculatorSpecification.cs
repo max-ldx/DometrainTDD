@@ -38,4 +38,18 @@ public class PriceCalculatorSpecification
         var result = _calculator.Calculate(pricingTable, new TicketPriceRequest(entry, exit));
         result.Should().Be(6);
     }
+
+    [Fact]
+    public void ShouldBeMaxDailyPriceIfCalculatedPriceExceedsIt()
+    {
+        var exit = DateTimeOffset.UtcNow;
+        var entry = exit.AddHours(-20);
+        var pricingTable = new PricingTable([
+            new PriceTier(24, 1m)
+        ], 10m);
+
+        var price = _calculator.Calculate(pricingTable, new TicketPriceRequest(entry, exit));
+
+        price.Should().Be(10);
+    }
 }

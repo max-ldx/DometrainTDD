@@ -18,6 +18,6 @@ public class PriceCalculator : IPriceCalculator
             if (ticketHoursToPay <= 0) break;
         }
 
-        return price;
+        return Math.Min(price, pricingTable.GetMaxDailyPrice());
     }
 }
